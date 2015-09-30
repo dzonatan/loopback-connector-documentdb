@@ -1,6 +1,6 @@
 {
   "name": "loopback-connector-documentdb",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha",
   "description": "LoopBack database connector for Micorosft Azure DocumentDB",
   "main": "index.js",
   "scripts": {},
