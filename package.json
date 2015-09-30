@@ -1,0 +1,28 @@
+{
+  "name": "loopback-connector-documentdb",
+  "version": "0.1.0",
+  "description": "LoopBack database connector for Micorosft Azure DocumentDB",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dzonatan/loopback-connector-documentdb.git"
+  },
+  "keywords": [
+    "loopback",
+    "connector",
+    "documentdb",
+    "azure"
+  ],
+  "author": "Rokas Brazdzionis <rokas.brazdzionis@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dzonatan/loopback-connector-documentdb/issues"
+  },
+  "homepage": "https://github.com/dzonatan/loopback-connector-documentdb",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "documentdb": "^1.2.2",
+    "loopback-connector": "^2.3.0"
+  }
+}
