@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha -R spec --require test/init.js test/*.test.js",
-    "test-travis": "./node_modules/istanbul/lib/cli.js cover mocha -- -R spec --require test/init.js test/*.test.js"
+    "test-travis": "./node_modules/istanbul/lib/cli.js cover _mocha -- -R spec --require test/init.js test/*.test.js"
   },
   "repository": {
     "type": "git",
