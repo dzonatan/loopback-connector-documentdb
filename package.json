@@ -4,7 +4,8 @@
   "description": "LoopBack database connector for Micorosft Azure DocumentDB",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R spec --timeout 10000 --require test/init.js test/*.test.js"
+    "test": "mocha -R spec --require test/init.js test/*.test.js",
+    "test-travis": "./node_modules/istanbul/lib/cli.js cover mocha -R spec --require test/init.js test/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,8 @@
     "loopback-connector": "^2.3.0"
   },
   "devDependencies": {
+    "coveralls": "^2.11.4",
+    "istanbul": "^0.3.21",
     "loopback-datasource-juggler": "^2.40.1",
     "mocha": "^2.3.3",
     "rc": "^1.1.1",
