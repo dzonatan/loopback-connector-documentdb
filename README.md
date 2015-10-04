@@ -2,6 +2,7 @@
 Loopback database connector for Microsoft Azure DocumentDB
 
 [![Build Status](https://travis-ci.org/dzonatan/loopback-connector-documentdb.svg)](https://travis-ci.org/dzonatan/loopback-connector-documentdb)
+[![Dependency Status](https://gemnasium.com/dzonatan/loopback-connector-documentdb.svg)](https://gemnasium.com/dzonatan/loopback-connector-documentdb)
 
 ## Installation for LoopBack API
 
