@@ -1,6 +1,7 @@
 require('./init.js');
 var should = require('should');
 var sinon = require('sinon');
+var QueryIterator = require('../node_modules/documentdb/lib/queryIterator');
 
 var db;
 var mock;
@@ -14,7 +15,7 @@ describe('Azure DocumentDB connector', function () {
     mock = sinon.mock(db.connector.client);
   });
 
-  it('should successfuly create document', function (done) {
+  it('should return same document when successfuly created', function (done) {
     // Arrange
     var model = { id: 123, smth: 'abc' };
 
@@ -26,6 +27,59 @@ describe('Azure DocumentDB connector', function () {
 
       // Assert
       createdModel.should.be.exactly(model);
+      done();
+    });
+  });
+
+  it('should return error when something went wrong', function (done) {
+    // Arrange
+    var model = { id: 123, smth: 'abc' };
+    var error = { code: 404, description: 'something happened...' };
+
+    // Mock
+    mock.expects('createDocument').yields(error, null);
+
+    // Act
+    db.connector.create(null, model, function (err, createdModel) {
+
+      // Assert
+      err.should.be.exactly(error);
+      done();
+    });
+  });
+
+  it('should return document when found', function (done) {
+    // Arrange
+    var model = { id: 123, smth: 'abc', type: 'documentType' };
+
+    // Mock
+    mock.expects('queryDocuments').returns(new QueryIterator(null, null, null, function (options, callback) {
+      callback(null, model, []);
+    }));
+
+    // Act
+    db.connector.find(model.type, model.id, function (err, foundModels) {
+
+      // Assert
+      foundModels[0].should.be.exactly(model);
+      done();
+    });
+  });
+
+  it('should return error when not found', function (done) {
+    // Arrange
+    var error = { code: 404, description: 'something happened...' };
+
+    // Mock
+    mock.expects('queryDocuments').returns(new QueryIterator(null, null, null, function (options, callback) {
+      callback(error, null, []);
+    }));
+
+    // Act
+    db.connector.find('type', 123, function (err, foundModels) {
+
+      // Assert
+      err.should.be.exactly(error);
       done();
     });
   });
