@@ -31,7 +31,7 @@ describe('Azure DocumentDB connector', function () {
     });
   });
 
-  it('should return error when something went wrong', function (done) {
+  it('should return error when creation did not succeeded', function (done) {
     // Arrange
     var model = { id: 123, smth: 'abc' };
     var error = { code: 404, description: 'something happened...' };
@@ -80,6 +80,27 @@ describe('Azure DocumentDB connector', function () {
 
       // Assert
       err.should.be.exactly(error);
+      done();
+    });
+  });
+
+  it('should correctly update document properties', function (done) {
+    // Arrange
+    var model = { id: 123, smth: 'abc', type: 'documentType' };
+    var changedModel = { id: 123, smth: 'ebd', type: 'documentType' };
+
+    // Mock
+    mock.expects('queryDocuments').returns(new QueryIterator(null, null, null, function (options, callback) {
+      callback(null, model, []);
+    }));
+    mock.expects('replaceDocument').withArgs(undefined, changedModel).yields(null, changedModel);
+
+    // Act
+    db.connector.updateAttributes(model.type, model.id, changedModel, function (err, updatedModel) {
+      
+      // Assert
+      updatedModel.should.be.exactly(changedModel);
+      mock.verify();
       done();
     });
   });
