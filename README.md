@@ -27,6 +27,7 @@ Enter the connector name without the loopback-connector- prefix: documentdb
 Open *server/datasources.json* file and add 3 additional properties to documentdb datasource:
 ```
 ...
+"host": "URL FOR YOUR DATABASE",
 "masterKey": "YOUR MASTER KEY FROM AZURE PORTAL",
 "databaseId": "DATABASE ID",
 "collectionId": "COLLECTION ID"
