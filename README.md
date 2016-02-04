@@ -1,11 +1,12 @@
 # loopback-connector-documentdb
 
-[![Join the chat at https://gitter.im/dzonatan/loopback-connector-documentdb](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dzonatan/loopback-connector-documentdb?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Loopback database connector for Microsoft Azure DocumentDB
 
 [![Build Status](https://travis-ci.org/dzonatan/loopback-connector-documentdb.svg)](https://travis-ci.org/dzonatan/loopback-connector-documentdb)
 [![Dependency Status](https://gemnasium.com/dzonatan/loopback-connector-documentdb.svg)](https://gemnasium.com/dzonatan/loopback-connector-documentdb)
-[![Coverage Status](https://coveralls.io/repos/dzonatan/loopback-connector-documentdb/badge.svg?branch=master&service=github)](https://coveralls.io/github/dzonatan/loopback-connector-documentdb?branch=master)
+[![Coverage Status](https://coveralls.io/repos/dzonatan/loopback-connector-documentdb/badge.svg?branch=master&service=github)](https://coveralls.io/github/dzonatan/loopback-connector-documentdb?branch=master) 
+[![Join the chat at https://gitter.im/dzonatan/loopback-connector-documentdb](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dzonatan/loopback-connector-documentdb?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![npm version](https://badge.fury.io/js/loopback-connector-documentdb.svg)](https://badge.fury.io/js/loopback-connector-documentdb)
 
 ## Installation for LoopBack API
 
